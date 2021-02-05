@@ -11,11 +11,11 @@ FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
 
 CREATE TABLE titles (
   emp_no INT NOT NULL,
-  title INT NOT NULL,
+  title varchar(50) NOT NULL,
   from_date DATE NOT NULL,
   to_date DATE NOT NULL,
   FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-  PRIMARY KEY (emp_no, title)
+  PRIMARY KEY (emp_no, title, from_date)
 );
 
 CREATE TABLE salaries (
