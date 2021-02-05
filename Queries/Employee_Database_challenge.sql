@@ -35,8 +35,8 @@ INTO mentorship_eligibilty
 FROM employees e
 INNER JOIN dept_emp d ON e.emp_no = d.emp_no
 INNER JOIN titles t ON e.emp_no = t.emp_no
-WHERE (EXTRACT(YEAR FROM d.to_date) = 9999)
-AND (EXTRACT(YEAR FROM e.birth_date) = 1965)
+WHERE (d.to_date = '9999-01-01')
+AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 ORDER BY e.emp_no 
 
 
